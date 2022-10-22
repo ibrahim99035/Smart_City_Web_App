@@ -26,7 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hospital',
-    'debug_toolbar'
+    'debug_toolbar',
+    'base'
 ]
 
 MIDDLEWARE = [
