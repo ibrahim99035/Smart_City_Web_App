@@ -44,8 +44,8 @@ def braintumor(request):
             File_System.save(filename, uploaded_file)
         
         
-        model = tf.keras.models.load_model(r'E:/FinalYear/Project/Ropositories/Smart_City_Web_App/City/BrainTumour/model.wdah_brain')   
-        img = image_utils.load_img(r'upload_temp/'+ uploaded_file.name , target_size=(224, 224))
+        model = tf.keras.models.load_model('BrainTumour/model.wdah_brain')   
+        img = image_utils.load_img('upload_temp/'+ uploaded_file.name , target_size=(224, 224))
         x = image_utils.img_to_array(img)
         x = np.expand_dims(x, axis=0)
         img_data = preprocess_input(x)
@@ -55,6 +55,7 @@ def braintumor(request):
            result ='Prediction: Negative'
         else:
            result = 'Prediction: Positive'
+        
         if os.path.exists('upload_temp/'+ uploaded_file.name):
             os.remove('upload_temp/'+ uploaded_file.name)
 

@@ -124,3 +124,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'upload_temp')
 MEDIA_URL = '/upload_temp/'
 
+BRAIN_ROOT = os.path.join(BASE_DIR, 'BrainTumour')
+BRAI_URL = '/BrainTumour/'
