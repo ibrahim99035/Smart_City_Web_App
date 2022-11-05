@@ -5,6 +5,12 @@ name = "pypi"
 
 [packages]
 django-debug-toolbar = "*"
+werkzeug = "*"
+keras = "*"
+numpy = "*"
+pandas = "*"
+joblib = "*"
+tensorflow = "*"
 
 [dev-packages]
 
