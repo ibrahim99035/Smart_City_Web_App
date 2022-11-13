@@ -1,4 +1,7 @@
 {% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'CSS/main.css' %}">
+{% endblock %}
 <nav class="navbar bg-blue">
     <div class="container flex">
         <a href="/" class="navbar-brand"><img src="{% static 'Images/Logo/logo.jpeg' %}" alt="Logo" width="50px" height="50px"></a>
@@ -12,8 +15,8 @@
             <ul class="navbar-nav">
                 <li class="nav-items"><a href="/" class="nav-link">Home</a></li>
                 <li class="nav-items"><a href="/hospital" class="nav-link">Hospital</a></li>
-                <li class="nav-items"><a href="/hospital/braintumor" class="nav-link">Services</a></li>
-                <li class="nav-items"><a href="/hospital/breastcancer" class="nav-link">Doctors</a></li>
+                <li class="nav-items"><a href="#" class="nav-link">Services</a></li>
+                <li class="nav-items"><a href="#" class="nav-link">Doctors</a></li>
                 <li class="nav-items"><a href="#" class="nav-link">Departments</a></li>
                 <li class="nav-items"><a href="#" class="nav-link">Contact</a></li>
             </ul>
@@ -21,7 +24,7 @@
                 <form >
                     <div class="search-bar-box flex">
                         <span class="search-icon flex">
-                            <img src="/Images/search-icon-dark.png" alt="">
+                            <img src="{% static 'Images/search-icon-dark.png' %}" alt="">
                         </span> 
                     <input type="search" class="search-iconn" name="" id="" placeholder="Search">
                     </div>

@@ -1,9 +1,52 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block head %}
-
+    <link rel="stylesheet" href="{% static 'CSS/hospital.css' %}">
 {% endblock %}
 
 {% block body %}
-
+    <div class="hospital_container">
+        <div class="hos_head">
+            <h2>Diagnosing Section</h2>
+            <h4>In our diagnosing System we are giving a prediction for brain tumour using standard brain ray images</h4>
+            <h4>Breast canser prediction is comming soon in version 4.0</h4>
+        </div> <br>
+        <div class="actions">           
+            <span id="brain_span">Brian Tumor</span>               
+            <span id="breast_span">Breast Canser</span>          
+        </div>
+        <div class="targets">
+            <div id="deafult" class="target_element">
+                <h1>You can get the diagnosing you want by clicking these spans.</h1>
+                <div class="deafult_logo">
+                    <img 
+                        src="{% static 'Images/Logo/one_titled.png' %}" 
+                        alt="Our Logo"
+                    />
+                </div>
+            </div>
+            <div id="brainTarget" class="target_element">
+                <h1>Brain Tumor Route</h1>
+                <a href="/hospital/braintumor" target="_blank">Click Here!</a> <br>
+                <div class="diag_logo">
+                    <img 
+                        src="{% static 'Images/models_icons/8206681.png' %}" 
+                        alt="Brain Logo"
+                    />
+                </div>
+            </div>
+            <div id="breastTarget" class="target_element">
+                <h1>Breast Canser Route</h1>
+                <a href="/hospital/breastcancer" target="_blank">Click Here!</a> <br>
+                <div class="diag_logo">
+                    <img 
+                        src="{% static 'Images/models_icons/3654368.png' %}" 
+                        alt="Breast Logo"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'JS/hospital.js' %}"></script>
 {% endblock %}

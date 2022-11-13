@@ -1,23 +1,43 @@
 {% extends 'base.html' %}
 
-{% block head %}
+{% load static %}
 
+{% block head %}
+    <link rel="stylesheet" href="{% static 'CSS/brain.css' %}">
 {% endblock %}
 
 {% block body %}
-    <div class="flex">
+    <div id="brain_container">
         <div class="form_header">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, est.</p>
+            <h2>Brain Tumor</h2><br>
+            <h3>Upload your Brain ray result here and submit to test and get the result.<h3><br>
+            <p>The allowed image types extensions are : <span>(.jpg - .png - .jpeg)</span>.</p><br>
         </div> <br>
-        <div id="brain_form">
-            <h2>Brain Tumor</h2>
+        
+        <div class="form-group brain_form">
             <form action="" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <input type="file" name="brain" id="upload"/>
-                <input type="submit" value="Upload"/>
+                <div class="form-group">
+                    <br>
+                    <label for="pwd" id="imageLabel">Chose your Brain Ray Image :</label>
+                    <input 
+                        title="Image" 
+                        type="file" 
+                        class="form-control btn btn-outline-info" 
+                        name="brain" 
+                        id="uploaded_image_input" 
+                        accept="image/png, image/gif, image/jpeg"
+                    />
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-outline-info" value="Upload"/>
+                </div>                        
             </form>
-
-            <h4>{{ result }}</h4>
+            
+        </div>
+        
+        <div id="brain_output">
+            <h3 class="result">{{ result }}</h3>
         </div>
     </div>
 {% endblock %}

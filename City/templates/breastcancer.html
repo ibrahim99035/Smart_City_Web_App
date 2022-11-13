@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block head %}
-
+    <link rel="stylesheet" href="{% static 'CSS/breast.css' %}">
 {% endblock %}
 
 {% block body %}
-
+    <div class="breastContainer">
+        <div id="breastHead">
+            <h1>Breast Canser Section</h1>
+            <h2>Comming Sooooon!</h2>
+        </div> <br>
+        <div id="breast_banner">
+            <img src="{% static 'Images/uwu.jpg' %}" alt="uwu">
+        </div>
+    </div>
 {% endblock %}
