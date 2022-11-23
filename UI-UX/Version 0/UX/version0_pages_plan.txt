@@ -1,0 +1,47 @@
+Home Page :
+	> The main page of the project.
+	> fetches from the base the navigation bar, the footer and doesn't have the header.
+	> the body of the page consist of :
+		- content about the project with an image represents smart city.
+		- the project logo, faculty logo, and university logo at the bottem.
+--------------------------------------------------------------------------------------------------------------------------------
+Hospital page :
+	> The main page of the medical service "the main function of the app in version 0".
+	> fetches from the base the navigation bar, the footer and, the header.
+	> the body of the page consist of :
+		- introduction into hospital services and what we are doing.
+		- some information about brain tumour with the brain ray image.
+		- some information about breast canser with the surgical image.
+		- the diadnosing section is a container with visible border and contains:
+			- at the top part there are 2 spans with different colors, curser pointer
+			- the 2 spans have a "click" event listener to perform style functionality.
+			- under spans there are 3 divs :
+				- the deafult div is visible 
+				- the other 2 divs have the style display: none;
+				- thes 2 divs are target elements to be displayed by clicking spans.
+				- the deafult div has the project logo, and instruction tells the user to click.
+				- the other 3 divs each have an icon represents its model and a styled link for the page route.
+--------------------------------------------------------------------------------------------------------------------------------
+Brain Tumour & breast canser 2 pages : 
+	> fetches from the base the navigation bar, the footer and, the header.
+	> the body of the page consist of :
+		- instruction tells the user what he should to do to get diagnosis
+		- form section have model title, input file field and submit button.
+		- the bottom section contains some information about the disease with references and images.
+--------------------------------------------------------------------------------------------------------------------------------
+About page : 
+	> fetches from the base the navigation bar, the footer and doesn't have the header.
+	> the body of the page consist of :
+		- Page Title "About Us" at the center.
+		- similar text with the project name followed by the project logo in stack order.
+		- sub text with a conclusion about the project.
+--------------------------------------------------------------------------------------------------------------------------------
+Contacts page : 
+	> fetches from the base the navigation bar, the footer and doesn't have the header.
+	> the body of the page consist of :
+		- "Send us an email, tell us how to help you"
+		- Form :
+			- Full name
+			- Email address.
+			- Text area for the message.
+--------------------------------------------------------------------------------------------------------------------------------
