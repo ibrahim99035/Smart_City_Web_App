@@ -1,27 +1,24 @@
-(Entities)=> {Employee - Departments - Patients - Diagnosing}
+(Entities)=> {Employee - Departments - Patient - Diagnosing}
 -----------------------------------------------------------------------------------
 {Employees} "Strong Entity"
   > He could be Doctor or Nurse "Role attribute".
   > It have a unique id.
-  > His/Her Full name is an compsite attribute consist of first and last name.
   > His/Her Phone number is a multivalued attribute.
-  > The age attribute is Derived attribute.
-  > Other single value attributes are : {gender - birthdate - password - email}.
+  > Other single value attributes are : {National ID - First name - Last name - password - email}.
 -----------------------------------------------------------------------------------
-{Departments} "Strong Entity"
+{Departments} "Strong Entity" 
   > It have a uique id.
   > It have a name attribute.
-  > It have d escription
+  > It have description
 -----------------------------------------------------------------------------------
 {Patients} "Strong Entity"
-  > His/Her Full name is an compsite attribute consist of first and last name.
-  > He/She has an Email.
   > He/She has a uique id.
   > He/She has a medical history conclusion.
-  > Single value attributes are : {Age - Date of admission - national ID}.
+  > His/Her Phone number is a multivalued attribute.
+  > Single value attributes are : {First name - Last name - Age - Date of admission - national ID - Email}.
 -----------------------------------------------------------------------------------
 {Diagnosis} "Strong Entity"
   > Has an id.
-  > Has a title.
+  > Has a type.
   > Has a date of test.
 ===================================================================================

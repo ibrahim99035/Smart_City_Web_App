@@ -5,7 +5,7 @@
   > an employee could be the manager of the department.
   > an employee could be in just one department.
   > a department could contain many employees.
-  > a departmet must have employees.
+  > a departmet must have employees.  
   > an employees may be in department.
 -----------------------------------------------------------------------------------
 {Entered_in}
@@ -23,12 +23,10 @@
 -----------------------------------------------------------------------------------
 {Supervision}
 "This relationshio is unary around The Employees entity"
-  > Doctors have no supervisor.
-  > Nurses must have supervisor.
   > Doctor could spervise many nurses.
   > Nusrse could have one suoervisor.
 -----------------------------------------------------------------------------------
-{Test}
+{Test} 
 "This relationshio is ternary between Employees, Patients, and Diagnosis entities"
   > The diagnosis could be assigned to one patient.
   > The patien may have diagnosis.
@@ -36,3 +34,4 @@
   > The diagnosis must be assigned by one employee.
   > The employee may assign diagnosis to a patient.
 ===================================================================================
+https://lucid.app/lucidspark/7e79642e-27d3-48c4-84d6-78a9ef542c92/edit?viewport_loc=-6538%2C-2111%2C12655%2C6087%2C0_0&invitationId=inv_288160f9-d7d0-43a9-b392-ca8035ef8ce9
