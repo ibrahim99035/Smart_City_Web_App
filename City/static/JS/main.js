@@ -11,10 +11,10 @@ window.addEventListener('resize',searchIcon);
 function searchIcon(){
     let windowSize=window.matchMedia("(min-width:1200px)");
     if (windowSize.matches){
-        document.querySelector('.search-icon img').src="Images/search-icon-dark.png";
+        document.querySelector('.search-icon img').src="{% static '/Images/search-icon-dark.png' %}";
     }
     else{
-        document.querySelector('.search-icon img').src="Images/search-icon.png";
+        document.querySelector('.search-icon img').src="{% static '/Images/search-icon.png' %}";
     }
 }
 searchIcon();
