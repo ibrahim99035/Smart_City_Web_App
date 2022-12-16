@@ -10,6 +10,7 @@
     <link rel="icon" href="{% static 'Images/Logo/logo.jpeg' %}" type="image/x-icon">
     <title>{{ title }}</title>
     {% block head %}
+
     {% endblock %}
 </head>
 <body>
@@ -19,9 +20,11 @@
             {% include 'navbar.html' %}
         </div>
 
-        <div>
-            {% include 'header.html' %}
-        </div>
+        {% if isHospital %}
+            <div>
+                {% include 'header.html' %}
+            </div>
+        {% endif %}
 
         <div>
             {% block body %}
@@ -32,6 +35,7 @@
         <div>
             {% include 'footer.html' %}
         </div>
+    
 
     </div>
 </body>

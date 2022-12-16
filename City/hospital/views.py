@@ -4,7 +4,8 @@ from django.conf import settings
 
 def hospital(request):
     title = 'Diagnosing'
-    return render(request, 'hospital.html', {'title': title})
+    isHospital = True
+    return render(request, 'hospital.html', {'title': title, 'isHospital': isHospital})
 
 
 #--------------------------------------------------------------------------------------------
@@ -35,6 +36,7 @@ def allowed_file(filename):
 def braintumor(request):
     title = 'Brain Tumor'
     result = ''
+    isHospital = True
     if request.method == 'POST':
         uploaded_file = request.FILES['brain']
         
@@ -59,11 +61,12 @@ def braintumor(request):
         if os.path.exists('upload_temp/'+ uploaded_file.name):
             os.remove('upload_temp/'+ uploaded_file.name)
 
-    return render(request, 'braintumor.html', {'title': title, 'result': result})
+    return render(request, 'braintumor.html', {'title': title, 'result': result, 'isHospital': isHospital})
 
 def breastcancer(request):
+    isHospital = True
     title = 'Brast Cancer'
-    return render(request, 'breastcancer.html', {'title': title})
+    return render(request, 'breastcancer.html', {'title': title, 'isHospital': isHospital})
 
 
 
