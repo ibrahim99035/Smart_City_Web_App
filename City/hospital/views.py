@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
-
+from hospital.ML_models import ModelProcess
 def hospital(request):
     title = 'Diagnosing'
     isHospital = True
@@ -12,15 +12,7 @@ def hospital(request):
 #Diagnosing Functionality
 import os
 from werkzeug.utils import secure_filename
-import tensorflow as tf 
-from keras.preprocessing import image
-from keras.applications.vgg16 import preprocess_input
-from keras.utils import image_utils
-from PIL import Image
 
-
-import numpy as np
-import pandas as pd 
 import joblib
 
 def load_model(model_file):
@@ -37,6 +29,7 @@ def braintumor(request):
     title = 'Brain Tumor'
     result = ''
     isHospital = True
+    brainObject = ModelProcess()
     if request.method == 'POST':
         uploaded_file = request.FILES['brain']
         
@@ -45,18 +38,8 @@ def braintumor(request):
             filename = secure_filename(uploaded_file.name)
             File_System.save(filename, uploaded_file)
         
-        
-        model = tf.keras.models.load_model('BrainTumour/model.wdah_brain')   
-        img = image_utils.load_img('upload_temp/'+ uploaded_file.name , target_size=(224, 224))
-        x = image_utils.img_to_array(img)
-        x = np.expand_dims(x, axis=0)
-        img_data = preprocess_input(x)
-        classes = model.predict(img_data)
-        New_pred = np.argmax(classes, axis=1)
-        if New_pred==[1]:
-           result ='Prediction: Negative'
-        else:
-           result = 'Prediction: Positive'
+        target_file = uploaded_file.name
+        result = brainObject.getBrainResult(target_file)
         
         if os.path.exists('upload_temp/'+ uploaded_file.name):
             os.remove('upload_temp/'+ uploaded_file.name)
