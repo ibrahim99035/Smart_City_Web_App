@@ -10,7 +10,12 @@ keras = "*"
 numpy = "*"
 pandas = "*"
 joblib = "*"
+djangorestframework = "*" 
+pyyaml = "*"
+requests = "*"
+django-cors-headers = "*"
 tensorflow = "*"
+mysqlclient = "*"
 
 [dev-packages]
 
