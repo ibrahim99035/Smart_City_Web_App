@@ -5,6 +5,18 @@ name = "pypi"
 
 [packages]
 django-debug-toolbar = "*"
+werkzeug = "*"
+keras = "*"
+numpy = "*"
+pandas = "*"
+joblib = "*"
+djangorestframework = "*" 
+pyyaml = "*"
+requests = "*"
+django-cors-headers = "*"
+tensorflow = "*"
+mysqlclient = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 
