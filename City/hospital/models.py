@@ -4,7 +4,7 @@ from django.utils import timezone
 
 class Department(models.Model):
     name =  models.CharField(max_length=25)
-    description = models.CharField(max_length=25)
+    description = models.CharField(max_length=5000)
 
 class Employee(models.Model):
     Fname = models.CharField(max_length=25)

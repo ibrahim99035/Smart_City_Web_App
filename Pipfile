@@ -16,6 +16,7 @@ requests = "*"
 django-cors-headers = "*"
 tensorflow = "*"
 mysqlclient = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 

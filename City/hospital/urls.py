@@ -7,4 +7,11 @@ urlpatterns = [
     path('breastcancer/', views.breastcancer, name = 'breastcancer'),
     path('api/get_empolyees', views.getEmployees, name = 'Get_Employees'),
     path('api/add_employee', views.postEmployee, name = 'Add_Employee'),
+    path('api/get_departments', views.getDepartments, name = 'Get_Departments'),
+    path('api/add_department', views.postDepartment, name = 'Add_Department'),
+    path('api/braintumor', views.getBrain, name='getBrain'),
+    path('api/anemia/', views.checkAnemia, name='check_anemia'),
+    path('api/diabetes/', views.checkDiabetes, name='check_diabetes'),
+    path('api/kidney/', views.checkKideny, name='check_kideny'),
+    path('api/surgical/', views.checkSurgical, name='check_surgical'),
 ]
