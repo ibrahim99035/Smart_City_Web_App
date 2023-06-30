@@ -8,8 +8,8 @@ from hospital.ML_models import ModelProcess
 from hospital.allowedImage import AllowedFiles
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from hospital.models import Employee, Department
-from hospital.serializers import EmployeeSerializer, DepartmentSerializer, ImageSerializer, SurgicalOperationSerializer, AnemiaSerializer, DiabetesSerializer, KidneySerializer
+from hospital.models import Employee, Department, Apointment
+from hospital.serializers import EmployeeSerializer, DepartmentSerializer, ImageSerializer, SurgicalOperationSerializer, AnemiaSerializer, DiabetesSerializer, KidneySerializer, AppointmentSerializer
 from hospital.medical import Anemia, Diabetes, Kidney, SurigcalOperation
 
 def hospital(request):
@@ -71,6 +71,22 @@ def postDepartment(request):
     if serializer.is_valid():
         serializer.save()
     return Response(serializer.data)
+
+@api_view(['POST'])
+def appointment(request):
+    appointments = Apointment.objects.all()  # Assuming the model name is "Appointment"
+    serializer = AppointmentSerializer(data=request.data)
+    
+    if serializer.is_valid():
+        already_booked = Apointment.objects.filter(**serializer.validated_data).exists()
+        
+        if already_booked:
+            return Response({'message': 'This session is already booked'})
+        else:
+            serializer.save()
+            return Response({'message': 'Session booked successfully'})
+    
+    return Response(serializer.errors)
 
 @api_view(['POST'])
 def getBrain(request):

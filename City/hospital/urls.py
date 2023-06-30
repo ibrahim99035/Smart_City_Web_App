@@ -9,6 +9,7 @@ urlpatterns = [
     path('api/add_employee', views.postEmployee, name = 'Add_Employee'),
     path('api/get_departments', views.getDepartments, name = 'Get_Departments'),
     path('api/add_department', views.postDepartment, name = 'Add_Department'),
+    path('api/appointment', views.appointment, name = 'appointment'),
     path('api/braintumor', views.getBrain, name='getBrain'),
     path('api/anemia/', views.checkAnemia, name='check_anemia'),
     path('api/diabetes/', views.checkDiabetes, name='check_diabetes'),

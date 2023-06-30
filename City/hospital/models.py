@@ -37,3 +37,8 @@ class Diagnose(models.Model):
     result = models.CharField(max_length=500)
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+
+class Apointment(models.Model):
+    name = models.CharField(max_length=25)
+    doctor = models.CharField(max_length=25)
+    date = models.CharField(max_length=5)

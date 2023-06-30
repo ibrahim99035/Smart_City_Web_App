@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from hospital.models import Employee, Department
+from hospital.models import Employee, Department, Apointment
 
 class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,7 +11,11 @@ class DepartmentSerializer(serializers.ModelSerializer):
         model  = Department
         fields = '__all__'
 
-from rest_framework import serializers
+
+class AppointmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model  = Apointment
+        fields = '__all__'
 
 class ImageSerializer(serializers.Serializer):
     brain = serializers.ImageField()
@@ -62,3 +66,6 @@ class SurgicalOperationSerializer(serializers.Serializer):
     def validate(self, data):
         # Perform additional validation if required
         return data
+
+
+
