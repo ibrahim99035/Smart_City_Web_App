@@ -78,7 +78,9 @@ def appointment(request):
     serializer = AppointmentSerializer(data=request.data)
     
     if serializer.is_valid():
-        already_booked = Apointment.objects.filter(**serializer.validated_data).exists()
+        doctor = serializer.validated_data.get('doctor')
+        date = serializer.validated_data.get('date')
+        already_booked = Apointment.objects.filter(doctor=doctor, date=date).exists()
         
         if already_booked:
             return Response({'message': 'This session is already booked'})
